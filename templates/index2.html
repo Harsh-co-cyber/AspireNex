@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
+    <title>Iris flower detection</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Iris flower detection</h1>
+    <form action="/predict" method="post">
+        <label for="sepal_length">Sepal Length :</label><br>
+        <input type="number" id="sepal_length" name="sepal_length" step="0.01" required><br>
+        
+        <label for="sepal_width">Sepal Width:</label><br>
+        <input type="number" id="sepal_width" name="sepal_width" step="0.01" required><br>
+        
+        <label for="petal_length">Petal Length:</label><br>
+        <input type="number" id="petal_length" name="petal_length" step="0.01" required><br>
+
+        <label for="petal_width">Petal  Width:</label><br>
+        <input type="number" id="petal_width" name="petal_width" step="0.01" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+body {
+    background-image: url('titaninc image.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #540669;
+    margin-bottom: 20px; 
+}
+
+form {
+    width: 300px;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    margin: 0 auto; 
+}
+
+label {
+    font-weight: bolder;
+    display: block;
+    margin-top: 1em;
+}
+
+input[type="submit"] {
+    margin-top: 1em;
+    border-radius:  10px;
+}
+
+input {
+    border-radius:  10px;
+}
