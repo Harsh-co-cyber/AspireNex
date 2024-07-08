@@ -4,7 +4,7 @@ import joblib
 
 app = Flask(__name__, static_url_path='/static')
 
-# Load the trained model
+# Load the trained model and preprocessor
 clf = joblib.load('titanic_model.pkl')
 
 @app.route('/')
@@ -16,15 +16,16 @@ def predict():
     # Get form data
     input_data = {
         'Pclass': int(request.form['Pclass']),
-        'Sex': request.form['Sex'],
+        'Sex': int(request.form['Sex']), 
         'Age': float(request.form['Age']),
         'Fare': float(request.form['Fare']),
-        'Cabin': request.form['Cabin'],
+        'Cabin': request.form['Cabin']
     }
     
-    # Preprocess input_data (create DataFrame and preprocess)
+    # Convert input_data to DataFrame
     input_df = pd.DataFrame([input_data])
     
+
     # Predict using the model
     prediction = clf.predict(input_df)
     
@@ -37,5 +38,4 @@ def predict():
     return render_template('result.html', result=result)
 
 if __name__ == '__main__':
-    app.run(debug=False)
- 
+    app.run(debug=True)

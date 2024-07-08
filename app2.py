@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import joblib
 import pandas as pd
 app2 = Flask(__name__, static_url_path='/static')
-clf = joblib.load('titanic_model.pkl')
+clf = joblib.load('iris detection.pkl')
 @app2.route('/')
 def home():
     return render_template('index2.html')

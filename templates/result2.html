@@ -3,11 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
     <title>Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .result-svg {
+            width: 80%;
+            height: auto;
+        }
+
+        .result-text {
+            fill: none;
+            stroke: black;
+            stroke-width: 0.5;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: draw 5s forwards;
+            font-size: 0.5em; /* Adjust font size based on the SVG viewbox */
+            font-family: 'Pacifico', cursive; /* Choose a calligraphy-like font */
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Result :  </h1>
-    <p>{{ result }}</p>
+    <h1>Result</h1>
+    <svg viewBox="0 0 100 20" class="result-svg">
+        <text x="0" y="15" class="result-text">{{ result }}</text>
+    </svg>
 </body>
 </html>
+
